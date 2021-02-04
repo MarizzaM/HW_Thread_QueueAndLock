@@ -1,0 +1,50 @@
+﻿             1
+The Start method does not return until the new thread has started running.
+             2
+ no
+             3
+ThreadPool avoids creating a Thread and cleaning the thread for every request
+             4
+functions has the possibility of being executed concurrently by more than one thread 
+             5
+Monitor; Lock; 
+             6
+disadvantage:
+If you forget to return the "key" (Monitor.Exit(key)), the threads will not be executed (deadlock)
+advantage:
+Using a monitor it can be ensured that  no other thread is allowed to access a section of 
+application code being executed by the lock owner.
+Monitor.Try
+            7.
+.try
+{
+.. Monitor::Enter ..
+}
+finaly
+{
+.. Monitor::Exet ..
+}
+            8
+Critical section is any piece of code that has the possibility of being executed concurrently by more than one thread 
+of the application and exposes any shared data or resources used by the application for access.
+            9
+ A deadlock is a situation where an application locks up because two or more activities are waiting for each other to finish.
+            10
+Thread safety is a technique which manipulates shared data structure in a manner that guarantees the safe execution 
+of a piece of code by the multiple threads at the same time
+            11
+BlockingCollection<T>
+ConcurrentBag<T>
+ConcurrentDictionary<TKey,TValue>
+ConcurrentQueue<T>
+ConcurrentStack<T>
+Partitioner
+Partitioner<TSource>
+OrderablePartitioner<TSource>
+            INTERFACES
+IProducerConsumerCollection<T>
+            ENUMS
+EnumerablePartitionerOptions
+
+access to elements of a collection object through extension methods or through explicit interface implementations are 
+not guaranteed to be thread-safe and may need to be synchronized by the caller.
